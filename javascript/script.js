@@ -121,12 +121,14 @@ function desenha() {
   moverBloco();
   moveBola();
 
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#A2DED0";
   ctx.fillRect(bola.x, bola.y, bola.largura, bola.altura);
+  //console.log(ctx);
   ctx.fillRect(esquerda.x, esquerda.y, esquerda.largura, esquerda.altura);
   ctx.fillRect(direita.x, direita.y, direita.largura, direita.altura);
 
   ctx.font = "20px Courier New";
+
   ctx.fillText("Jogador 1: " + esquerda.score, 40, 25);
   ctx.fillText("Jogador 2: " + direita.score, canvas.width - 190, 25);
 
