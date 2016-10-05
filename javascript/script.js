@@ -112,7 +112,7 @@ function novoJogo(winner) {
 
 /*
 *   Função que insere os elementos no canvas
-*   Dispatcher para 
+*   Dispatcher para
 */
 function desenha() {
 
@@ -126,9 +126,9 @@ function desenha() {
   ctx.fillRect(esquerda.x, esquerda.y, esquerda.largura, esquerda.altura);
   ctx.fillRect(direita.x, direita.y, direita.largura, direita.altura);
 
-  ctx.font = "20px Arial";
-  ctx.fillText("Player 1: " + esquerda.score, 50, 20);
-  ctx.fillText("Player 2: " + direita.score, canvas.width - 150, 20);
+  ctx.font = "20px Courier New";
+  ctx.fillText("Jogador 1: " + esquerda.score, 40, 25);
+  ctx.fillText("Jogador 2: " + direita.score, canvas.width - 190, 25);
 
 };
 
