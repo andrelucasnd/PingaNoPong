@@ -34,11 +34,10 @@ var bola = { //bola
   speed: 1
 };
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function(e) { //captura a tecla pressionada
   teclas[e.keyCode] = true;
-  //alert(e.keyCode);
 }, false);
 
-document.addEventListener("keyup", function(e) {
+document.addEventListener("keyup", function(e) { //captura a tecla liberada
   delete teclas[e.keyCode];
 }, false);
