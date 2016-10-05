@@ -112,13 +112,14 @@ function novoJogo(winner) {
 
 /*
 *   Função que insere os elementos no canvas
+*   Dispatcher para 
 */
 function desenha() {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  movebloco();
-  movebola();
+  moverBloco();
+  moveBola();
 
   ctx.fillStyle = "white";
   ctx.fillRect(bola.x, bola.y, bola.largura, bola.altura);
