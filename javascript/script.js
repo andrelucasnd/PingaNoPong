@@ -130,3 +130,8 @@ function desenha() {
   ctx.fillText("Player 2: " + direita.score, canvas.width - 150, 20);
 
 };
+
+/*
+*   Chama a função recursivamente a cada 5 milissegundos
+*/
+setInterval(desenha, 5);
