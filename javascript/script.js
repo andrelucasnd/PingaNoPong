@@ -93,3 +93,17 @@ function moveBola() {
     else if(bola.x + bola.largura > direita.x + 15)
         novoJogo("player 1");
 };
+
+
+function novoJogo(winner) {
+    if(winner == "player 1")
+        ++esquerda.score;
+    else
+        ++direita.score;
+
+    esquerda.y = canvas.height / 2 - esquerda.altura / 2;
+    direita.y = esquerda.y;
+    bola.y = canvas.height / 2 - bola.altura / 2;
+    bola.x = canvas.width / 2 - bola.largura / 2;
+    bola.mod = 0;
+};
