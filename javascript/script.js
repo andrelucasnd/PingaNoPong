@@ -44,7 +44,7 @@ document.addEventListener("keyup", function(e) { //captura a tecla liberada
 
 /*
 *   Função para mover os blocos dos jogadores
-*   Será chamada dentro da função dispatcher que 
+*   Será chamada dentro da função dispatcher que
 *   criará o canvas
 */
 
@@ -94,7 +94,9 @@ function moveBola() {
         novoJogo("player 1");
 };
 
-
+/*
+*   Função que inicia novo jogo e modifica o placar
+*/
 function novoJogo(winner) {
     if(winner == "player 1")
         ++esquerda.score;
@@ -106,4 +108,25 @@ function novoJogo(winner) {
     bola.y = canvas.height / 2 - bola.altura / 2;
     bola.x = canvas.width / 2 - bola.largura / 2;
     bola.mod = 0;
+};
+
+/*
+*   Função que insere os elementos no canvas
+*/
+function desenha() {
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  movebloco();
+  movebola();
+
+  ctx.fillStyle = "white";
+  ctx.fillRect(bola.x, bola.y, bola.largura, bola.altura);
+  ctx.fillRect(esquerda.x, esquerda.y, esquerda.largura, esquerda.altura);
+  ctx.fillRect(direita.x, direita.y, direita.largura, direita.altura);
+
+  ctx.font = "20px Arial";
+  ctx.fillText("Player 1: " + esquerda.score, 50, 20);
+  ctx.fillText("Player 2: " + direita.score, canvas.width - 150, 20);
+
 };
