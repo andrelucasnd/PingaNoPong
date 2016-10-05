@@ -50,16 +50,16 @@ document.addEventListener("keyup", function(e) { //captura a tecla liberada
 
 
 function moverBloco() {
-    if(87 in teclas && esquerda.y > 0)
+    if(87 in teclas && esquerda.y > 0) //tecla W
         esquerda.y -= esquerda.velocidade;
 
-    else if(83 in teclas && esquerda.y + esquerda.altura < canvas.height)
+    else if(83 in teclas && esquerda.y + esquerda.altura < canvas.height) //tecla S
         esquerda.y += esquerda.velocidade;
 
-    if(38 in teclas && direita.y > 0)
+    if(38 in teclas && direita.y > 0) //tecla cima
         direita.y -= direita.velocidade;
 
-    else if(40 in teclas && direita.y + direita.altura < canvas.height)
+    else if(40 in teclas && direita.y + direita.altura < canvas.height) //tecla baixo
         direita.y += direita.velocidade;
 };
 
