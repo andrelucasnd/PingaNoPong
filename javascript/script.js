@@ -10,7 +10,7 @@ var esquerda = { //barra da esquerda
   largura: 30,
   diry: 0,
   score: 0,
-  speed: 10
+  velocidade: 10
 };
 
 var direita = { //barra da direita
@@ -20,7 +20,7 @@ var direita = { //barra da direita
   largura: 30,
   diry: 0,
   score: 0,
-  speed: 10
+  velocidade: 10
 };
 
 var bola = { //bola
@@ -31,7 +31,7 @@ var bola = { //bola
   dirx: -1,
   diry: 1,
   mod: 0,
-  speed: 1
+  velocidade: 1
 };
 
 document.addEventListener("keydown", function(e) { //captura a tecla pressionada
@@ -48,16 +48,48 @@ document.addEventListener("keyup", function(e) { //captura a tecla liberada
 *   criará o canvas
 */
 
+
 function moverBloco() {
     if(87 in teclas && esquerda.y > 0)
-        esquerda.y -= esquerda.speed;
+        esquerda.y -= esquerda.velocidade;
 
     else if(83 in teclas && esquerda.y + esquerda.altura < canvas.height)
-        esquerda.y += esquerda.speed;
+        esquerda.y += esquerda.velocidade;
 
     if(38 in teclas && direita.y > 0)
-        direita.y -= direita.speed;
+        direita.y -= direita.velocidade;
 
     else if(40 in teclas && direita.y + direita.altura < canvas.height)
-        direita.y += direita.speed;
+        direita.y += direita.velocidade;
+};
+
+
+/*
+*   Função que move a bola dentro do jogo
+*/
+function moveBola() {
+    if(bola.y + bola.altura >= esquerda.y && bola.y <= esquerda.y + esquerda.altura && bola.x <= esquerda.x + esquerda.largura) {
+        bola.dirx = 1;
+        bola.mod += 0.2;
+    }
+
+    else if(bola.y + bola.altura >= direita.y && bola.y <= direita.y + direita.altura && bola.x + bola.largura >= direita.x) {
+        bola.dirx = -1;
+        bola.mod += 0.2;
+    }
+
+    if(bola.y <= 0)
+        bola.diry = 1;
+
+    else if(bola.y + bola.altura >= canvas.height)
+        bola.diry = -1;
+
+    bola.x += (bola.velocidade + bola.mod) * bola.dirx;
+    bola.y += (bola.velocidade + bola.mod) * bola.diry;
+
+    if(bola.x < esquerda.x + esquerda.largura - 15)
+        novoJogo("player 2");
+
+    else if(bola.x + bola.largura > direita.x + 15)
+        novoJogo("player 1");
 };
