@@ -41,3 +41,23 @@ document.addEventListener("keydown", function(e) { //captura a tecla pressionada
 document.addEventListener("keyup", function(e) { //captura a tecla liberada
   delete teclas[e.keyCode];
 }, false);
+
+/*
+*   Função para mover os blocos dos jogadores
+*   Será chamada dentro da função dispatcher que 
+*   criará o canvas
+*/
+
+function moverBloco() {
+    if(87 in teclas && esquerda.y > 0)
+        esquerda.y -= esquerda.speed;
+
+    else if(83 in teclas && esquerda.y + esquerda.altura < canvas.height)
+        esquerda.y += esquerda.speed;
+
+    if(38 in teclas && direita.y > 0)
+        direita.y -= direita.speed;
+
+    else if(40 in teclas && direita.y + direita.altura < canvas.height)
+        direita.y += direita.speed;
+};
