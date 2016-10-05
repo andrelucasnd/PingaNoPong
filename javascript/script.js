@@ -33,3 +33,12 @@ var bola = { //bola
   mod: 0,
   speed: 1
 };
+
+document.addEventListener("keydown", function(e) {
+  teclas[e.keyCode] = true;
+  //alert(e.keyCode);
+}, false);
+
+document.addEventListener("keyup", function(e) {
+  delete teclas[e.keyCode];
+}, false);
