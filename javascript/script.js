@@ -95,13 +95,13 @@ function moveBola() {
     //bola posicionada na barra esquerda.. parte de cima da barra.. parte debaixo da barra... quando tocar na barra
     if(bola.y + bola.altura >= esquerda.y && bola.y <= esquerda.y + esquerda.altura && bola.x <= esquerda.x + esquerda.largura) {
         bola.dirx = 1; //bola pra direita --> quando bate na barra esquerda
-        bola.mod += 0.2; //incrementa na velociade da bola
+        bola.mod += 0.15; //incrementa na velociade da bola
     }
 
     //bola posicionada na barra direita.. parte de cima da barrra... parte debaixo da barra.. quando tocar na barras
     else if(bola.y + bola.altura >= direita.y && bola.y <= direita.y + direita.altura && bola.x + bola.largura >= direita.x) {
         bola.dirx = -1; //bola pra esquerda --> quando bate na barra da direita
-        bola.mod += 0.2; //incrementa na velociade da bola
+        bola.mod += 0.15; //incrementa na velociade da bola
     }
 
     if(bola.y <= 0) //quando bate no teto
