@@ -10,7 +10,7 @@ var esquerda = { //barra da esquerda
   largura: 30,
   diry: 0,
   score: 0,
-  velocidade: 10 //quantidade de pixels que ela anda
+  velocidade: 5 //quantidade de pixels que ela anda
 };
 
 var direita = { //barra da direita
@@ -20,7 +20,7 @@ var direita = { //barra da direita
   largura: 30,
   diry: 0,
   score: 0,
-  velocidade: 10 //quantidade de pixels que ela anda
+  velocidade: 5 //quantidade de pixels que ela anda
 };
 
 var bola = { //bola
