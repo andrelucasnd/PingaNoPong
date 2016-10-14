@@ -161,7 +161,7 @@ function desenha() {
 
   //insere os textos do placar
   ctx.fillText("Jogador 1: " + esquerda.score, 40, 25);
-  ctx.fillText("Jogador 2: " + direita.score, canvas.width - 190, 25);
+  ctx.fillText("Jogador 2: " + direita.score, canvas.width - 200, 25);
 
 };
 
